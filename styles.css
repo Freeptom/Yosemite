@@ -3,26 +3,92 @@
     margin: 0;
 }
 
-
 body {
-    /* max-width: 1200px; */
+    font-family: gill-sans-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+   
+    
 }
 
 .header {
     height: 50vh;
+    width: 100%;
+    grid-template-columns: 40px 1fr 40px;
+    display: grid;
+   
 }
 
 .header__image {
-    background-image: url("img/Yos_2.jpg"); 
+    
+    image: url("img/Yos_2.jpg");
     background-color: #cccccc;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 50vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: 40% 0%;
+    background: yellow;
     position: relative;
+    grid-column: 1 / -1;
+    
 }
 
 .weather {
+    position: absolute;
+    top: 5vh;
+    bottom: 0;
+    right: 20%;
     color: white;
-    display: flex;
+    display: grid;
+    grid-template-areas: 
+        "temp vl type"
+        "temp vl tomorrow";
+    height: 10px;
+    grid-gap: 0em .75em;
     
 }
+
+.weather__temp {
+    font-size: 1.5em;
+    grid-area: temp; 
+}
+
+.weather__vl {
+    border-left: 1px solid white;
+    height: 120%;
+    grid-area: vl;
+}
+
+.weather__type {
+    font-size: .875em;
+    grid-area: type;
+    align-self: center;
+    line-height: 80%;
+    margin: .4em 0 0 0;
+}
+
+.weather__tomorrow {
+    font-size: .75em;
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: underline;
+    grid-area: tomorrow;
+    align-self: center;
+}
+
+.tag {
+    font-size: 1em;
+    color: white;
+    margin-top: -4em;
+    grid-column: 2;
+    z-index: 1;
+    justify-self: center;
+    text-align: center;
+    width: 80%;
+}
+
+/* .center {
+    display: flex;
+    justify-content: center;
+} */
